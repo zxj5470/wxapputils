@@ -1,0 +1,43 @@
+<!--colorPicker.wxml-->
+<view class="thisPage">
+	<view id="selectRGB">
+		<text>R</text>
+		<slider id="colorR" min="0" max="255" value='{{cr}}' bindchanging='bindchanging' bindchange='bindchanging'
+				  activeColor="{{currentColor}}"></slider>
+
+		<text>G</text>
+		<slider id="colorG" min="0" max="255" value='{{cg}}' bindchanging='bindchanging' bindchange='bindchanging'
+				  activeColor="{{currentColor}}"></slider>
+
+		<text>B</text>
+		<slider id="colorB" min="0" max="255" value='{{cb}}' bindchanging='bindchanging' bindchange='bindchanging'
+				  activeColor="{{currentColor}}"></slider>
+	</view>
+	<view id="currentHexColorText">
+		<text id="currentText">当前颜色</text>
+		<input id="hexColor" value="{{inputValue}}" style="color:{{currentColor}}" bindinput='bindinput'/>
+	</view>
+	<view class="row align-bottom" id="rgbColorText">
+		<input class="input-color" id="inputR" value="{{cr}}" bindinput="numberInput"/>
+		<view class="cbtn">
+			<button class="color-button" bindtap="buttonAdd" id="rUp">+</button>
+			<button class="color-button" bindtap="buttonMinus" id="rDown">-</button>
+		</view>
+
+		<input class="input-color" id="inputG" value="{{cg}}" bindinput="numberInput"/>
+		<view class="cbtn">
+			<button class="color-button" bindtap="buttonAdd" id="gUp">+</button>
+			<button class="color-button" bindtap="buttonMinus" id="gDown">-</button>
+		</view>
+
+		<input class="input-color" id="inputB" value="{{cb}}" bindinput="numberInput"/>
+		<view class="cbtn">
+			<button class="color-button" bindtap="buttonAdd" id="bUp">+</button>
+			<button class="color-button" bindtap="buttonMinus" id="bDown">-</button>
+		</view>
+
+	</view>
+	<button bindtap="colorToClipboard">复制到剪切板</button>
+	<button type="primary" id="confirmColor" bindtap='confirmColor'>确定</button>
+
+</view>
